@@ -1,3 +1,3 @@
-const MEAT_API = 'http://localhost:3010'
+const MEAT_API = 'http://localhost:3010';
 
-export { MEAT_API }
+export { MEAT_API };
