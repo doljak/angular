@@ -1,14 +1,12 @@
 <div *ngIf="student">
-  <p>
-    Name: <a href="#" (click)="showName()">{{student?.name}}</a>
-    <span *ngIf="student?.isJedi">
-      Jedi temple: {{student?.temple}} <br />
-      <button (click)="description.focus()">Focus!</button><br />
-      <textarea #description></textarea>
-    </span>
-    
-  </p>
+  Student: <a href="" (click)="showName($event)">{{student.name}}</a>
+  <div *ngIf="student.isJedi">
+    Jedi Temple: {{student.temple}}
+    <br/>
+    <textarea #description cols="30" rows="10"></textarea><br>
+    <button (click)="description.focus()">Focus</button>
+  </div>
 </div>
 <p *ngIf="!student">
-  Sem dados pra exibir
+  Sem dados para exibir
 </p>

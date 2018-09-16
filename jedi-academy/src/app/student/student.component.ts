@@ -1,23 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Student } from './student.model'
+
+import { Student } from './student.model';
 
 @Component({
-  selector: 'jad-student',
+  selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-
 export class StudentComponent implements OnInit {
+  @Input()
+  student: Student;
 
-  @Input() student:Student
-  
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  showName(){
-    console.log(`Student:${this.student.name}`)
+  showName(e) {
+    e.preventDefault()
+    console.log(this.student.name)
   }
 
 }
