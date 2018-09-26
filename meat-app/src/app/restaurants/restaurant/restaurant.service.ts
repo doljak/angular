@@ -19,5 +19,11 @@ export class RestaurantService{
         return this.http.get(`${ MEAT_API }/restaurants`)
             .map(restaurants => restaurants.json())
             .catch(error => ErrorHandler.handleError(error))
-    }  
+    } 
+    
+    restaurantById(id:string): Observable< Restaurant >{
+        return this.http.get(`${MEAT_API}/restaurants/${id}`)
+            .map(restaurant => restaurant.json())
+            .catch(error => ErrorHandler.handleError(error))
+    }
 }
