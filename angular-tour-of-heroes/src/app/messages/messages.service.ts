@@ -16,7 +16,6 @@ export class MessagesService {
 
   clear()
   {
-
     this.messages = []
   }
   

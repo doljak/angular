@@ -11,7 +11,7 @@ import { MessagesService } from '../messages/messages.service';
 export class HeroService {
 
   constructor(
-    private messageService:MessagesService
+    public messageService:MessagesService
   )
   {}
 
