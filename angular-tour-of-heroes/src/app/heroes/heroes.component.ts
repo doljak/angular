@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './heroes.class';
-//import { HEROES } from '../../mock-heroes'; 
 import { HeroService } from './hero.service'
-import { Observable } from 'rxjs'
+
 
 @Component({
   selector: 'app-heroes',
@@ -11,7 +10,7 @@ import { Observable } from 'rxjs'
 })
 export class HeroesComponent implements OnInit {
 
-  heroes:Hero[]
+  heroes:Hero[];
   selectedHero:Hero; 
 
   constructor(
@@ -23,7 +22,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes()
   }
 
-  onSelect(hero:Hero){
+  onSelect(hero:Hero): void{
     this.selectedHero = hero
   }
 
