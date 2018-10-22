@@ -7,6 +7,6 @@ import { CalculatorComponent } from './calculator/calculator.component';
     CommonModule,
   ],
   declarations: [CalculatorComponent],
-  exports:[CalculatorComponent],
+  exports:[CalculatorComponent], 
 })
 export class LibCalcModule { }
