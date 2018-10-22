@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calculator',
+  selector: 'lib-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
 
-  constructor() { }
+  public result:number
 
-  ngOnInit() {
+  constructor()
+  {}
+
+  ngOnInit()
+  {}
+
+  add(v1, v2){
+    this.result = parseFloat(v1) + parseFloat(v2)
   }
 
+  subtract(v1, v2){
+    this.result = parseFloat(v1) - parseFloat(v2)
+  }
 }

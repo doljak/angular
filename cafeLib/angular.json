@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "my-calculator": {
+      "root": "projects/my-calculator",
+      "sourceRoot": "projects/my-calculator/src",
+      "projectType": "library",
+      "prefix": "mc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/my-calculator/tsconfig.lib.json",
+            "project": "projects/my-calculator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-calculator/src/test.ts",
+            "tsConfig": "projects/my-calculator/tsconfig.spec.json",
+            "karmaConfig": "projects/my-calculator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/my-calculator/tsconfig.lib.json",
+              "projects/my-calculator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "cafeLib"

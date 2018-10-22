@@ -6,7 +6,7 @@
 /out-tsc
 
 # projects
-/my-calculator
+/projects/my-calculator
 
 # dependencies
 /node_modules
