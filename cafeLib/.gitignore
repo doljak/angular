@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# projects
+/my-calculator
+
 # dependencies
 /node_modules
 
