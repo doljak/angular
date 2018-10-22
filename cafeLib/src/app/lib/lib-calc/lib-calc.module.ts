@@ -4,9 +4,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule
   ],
   declarations: [CalculatorComponent],
-  exports:[CalculatorComponent], 
+  exports:[CalculatorComponent],
 })
 export class LibCalcModule { }
