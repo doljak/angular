@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LibCalcModule } from './lib/lib-calc/lib-calc.module';
+import { LibCalcModule } from 'my-first-lib';
 
 @NgModule({
   declarations: [
