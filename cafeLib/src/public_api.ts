@@ -1,1 +1,0 @@
-export * from './app/lib/lib-calc/lib-calc.module'
