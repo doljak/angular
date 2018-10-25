@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -9,21 +10,32 @@ export class UserService {
   constructor() { }
 
   public user = {
-    first:"Smithy",
+    first:"Smith",
     last:"Murphy",
     roles:["admin","editor"]
   }
+
 
   getUsername():string{
     return `${this.user.first} ${this.user.last}`
   }
 
   getUsername_p():Promise<string | void>{
-    return 
-  }
+    return new Promise<string>( (resolve, reject)=>
+                {
+                  setTimeout(()=>{
+                    resolve(`${this.user.first} ${this.user.last}`)
+                  }, 2000 )
+                }).catch(err=>{
+                  reject(`${err}`)
+                })
+              }
 
   getUsername_o():Observable<string>{
-    return
+    return Observable.create( observer => {
+      observer.next(`${this.user.first} ${this.user.last}`)
+      observer.complete()
+    })
   }
 
   getUserDetails():string{
