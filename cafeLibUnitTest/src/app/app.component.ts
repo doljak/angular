@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlternatingCasePipe } from './alternate-casing/alternating-case.pipe'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cafeLibUnitTest';
+  public title = 'cafeLibUnitTest';
+  public hiString = 'Jefferson';
 }

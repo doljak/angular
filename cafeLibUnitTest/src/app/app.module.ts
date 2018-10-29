@@ -5,15 +5,39 @@ import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user/profile/user-profile/user-profile/user-profile.component';
 import { BoxDirective } from './box/box.directive';
 
+import { Routes, RouterModule } from '@angular/router';
+import { AlternatingCasePipe } from './alternate-casing/alternating-case.pipe'
+
+
+const routes: Routes = [
+  // { path: '', component: HomeComponent },
+  // { path: 'path2', component: Name2Component },
+  // { path: 'path3', component: Name3Component },
+  // { path: 'path4', component: Name4Component },
+  // { path: '**', component: PageNotFoundComponent },
+
+  //{ path: 'path/:routeParam', component: MyComponent },
+  //{ path: 'staticPath', component: ... },
+  //{ path: '**', component: ... },
+  //{ path: 'oldPath', redirectTo: '/staticPath' },
+  //{ path: ..., component: ..., data: { message: 'Custom' }
+];
+
+export class FeatureRoutingModule {}
+
+
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
-    BoxDirective
+    BoxDirective,
+    AlternatingCasePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forChild(routes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
