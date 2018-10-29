@@ -12,18 +12,18 @@ describe('UserService (no TestBed)', () => {
     service = new UserService()
   })
 
-  it('#getUserName should return Smith Murphy a',() => {
+  it('#getUserName should return Smith Murphy test A',() => {
     expect(service.getUsername()).toBe('Smith Murphy')
   })
 
-  it('#getUserName should return Smith Murphy b',(done:DoneFn) => {
+  it('#getUserName should return Smith Murphy test B',(done:DoneFn) => {
     service.getUsername_p().then(username => {
       expect(username).toBe('Smith Murphy')
       done()
     })
   })
 
-  it('#getUsername should return Smith Murphy c', (done:DoneFn)=>{
+  it('#getUsername should return Smith Murphy test C', (done:DoneFn)=>{
     service.getUsername_o().subscribe(username => {
       expect(username).toBe('Smith Murphy')
       done()
@@ -40,12 +40,12 @@ describe('TestService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return Smith Murphy a with TestBed', ()=>{
+  it('should return Smith Murphy with TestBed - test A', ()=>{
     const service: UserService = TestBed.get(UserService)
     expect(service.getUsername()).toBe('Smith Murphy')
   })
   
-  it('should return Smith Murphy b with TestBed', (done:DoneFn) => {
+  it('should return Smith Murphy with TestBed - test B', (done:DoneFn) => {
     const service: UserService = TestBed.get(UserService)
 
     service.getUsername_p().then( nameValue => {
@@ -54,14 +54,14 @@ describe('TestService', () => {
     })
   })
 
-  it('should return Smith Murphy c1 with TestBed', async(inject([UserService], (service) => {
+  it('should return Smith Murphy with TestBed - test C1', async(inject([UserService], (service) => {
       service.getUsername_o().subscribe( nameValue => {
         expect(nameValue).toBe('Smith Murphy')
       })
     }))
   )
 
-  it('should return Smith Murphy c1 with TestBed', async(()=>{
+  it('should return Smith Murphy with TestBed - test C2', async(()=>{
     const service = TestBed.get(UserService)
     service.getUsername_o().subscribe( nameValue => {
       expect(nameValue).toBe('Smith Murphy')
