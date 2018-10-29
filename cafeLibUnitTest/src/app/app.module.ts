@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user/profile/user-profile/user-profile/user-profile.component';
+import { BoxDirective } from './box/box.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    BoxDirective
   ],
   imports: [
     BrowserModule
