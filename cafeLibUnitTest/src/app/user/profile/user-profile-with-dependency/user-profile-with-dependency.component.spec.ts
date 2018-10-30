@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserProfileWithDependencyComponent } from './user-profile-with-dependency.component';
 import { UserService } from '../../user.service';
 import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('UserProfileWithDependencyComponent', () => {
 
@@ -50,6 +51,20 @@ describe('UserProfileWithDependencyComponent', () => {
 
     expect(component.user.first).toContain('Mock')
     expect(component.user.last).toContain('User')
+
+  })
+
+  it('should display the first and last name', ()=>{
+    let p = fixture.debugElement.query( By.css('#username'))
+
+    let innerText = p.nativeElement.innerText
+    expect(innerText).toBe("")
+
+    fixture.detectChanges()
+
+    innerText = p.nativeElement.innerText
+    expect(innerText).toContain(component.user.first)
+    expect(innerText).toContain(component.user.last) 
 
   })
   

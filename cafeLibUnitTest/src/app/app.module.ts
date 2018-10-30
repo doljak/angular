@@ -7,7 +7,8 @@ import { BoxDirective } from './box/box.directive';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AlternatingCasePipe } from './alternate-casing/alternating-case.pipe';
-import { UserProfileWithDependencyComponent } from './user/profile/user-profile-with-dependency/user-profile-with-dependency.component'
+import { UserProfileWithDependencyComponent } from './user/profile/user-profile-with-dependency/user-profile-with-dependency.component';
+import { UserProfileWithDepencyComponentComponent } from './user/profile/user-profile-with-depency-component/user-profile-with-depency-component.component'
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ export class FeatureRoutingModule {}
     UserProfileComponent,
     BoxDirective,
     AlternatingCasePipe,
-    UserProfileWithDependencyComponent
+    UserProfileWithDependencyComponent,
+    UserProfileWithDepencyComponentComponent
   ],
   imports: [
     BrowserModule,
