@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { UserService } from '../../user.service'
 import { startWith, catchError } from 'rxjs/operators'
+import { of } from 'rxjs/internal/observable/of'
 
 
 
@@ -13,7 +14,7 @@ import { startWith, catchError } from 'rxjs/operators'
 export class UserProfileWithDepencySpie implements OnInit {
 
   user:any
-  friendsOnline:Observable<UserProfileWithDepencySpie>
+  friendsOnline:Observable<string[]>
   errMsg:string
 
   constructor(private userService:UserService) { }
@@ -24,9 +25,9 @@ export class UserProfileWithDepencySpie implements OnInit {
 
     this.errMsg = ''
     
-    this.friendsOnline = this.userService.getUsername_o().pipe(
+    this.friendsOnline = this.userService.getOnlineFriends_o().pipe(
       startWith(['... no friends online']),
-      catchError((err:any)=>{
+      catchError((err:any)=>{ 
         setTimeout(()=> this.errMsg = err.message || err.toString())
         return of(['...no friends online'])
       })

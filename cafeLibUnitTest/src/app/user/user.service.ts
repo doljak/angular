@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { reject } from 'q';
+import * as _ from 'underscore'
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,13 @@ export class UserService {
 
   getUserDetails_p():Promise<any>{
     return
+  }
+
+  getOnlineFriends_o():Observable<string[]>{
+    return Observable.create( observer => {
+      setInterval(()=>{
+        observer.next( _.sample(this.user.friends, Math.ceil(Math.random() * this.user.friends.length)))
+      }, 3000 )
+    })
   }
 }
