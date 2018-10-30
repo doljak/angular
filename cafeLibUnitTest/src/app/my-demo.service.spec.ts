@@ -11,9 +11,4 @@ describe('MyDemoService', () => {
     const service: MyDemoService = TestBed.get(MyDemoService);
     expect(service).toBeTruthy();
   });
-
-  //course example
-  // it('should be created (course example)', inject([MyDemoService], (service: MyDemoService)=>{
-  //   expect(service).toBeTruthy()
-  // }))
 });

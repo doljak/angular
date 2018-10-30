@@ -7,6 +7,5 @@ import { AlternatingCasePipe } from './alternate-casing/alternating-case.pipe'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'cafeLibUnitTest';
-  public hiString = 'Jefferson';
+  public pages = ["exercise-01", "exercise-02", "exercise-03", "exercise-04"]
 }

@@ -1,20 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<a routerLink="/" >HOME</a>
 
-<!--<router-outlet></router-outlet>-->
+<ul *ngFor="let page of pages"> 
+    <li>
+        <a routerLink="/{{ page }}" > {{ page }} </a>
+    </li>
+</ul>
 
-<h1>{{title}}!</h1>
-
-<h2>{{ hiString | alternatingCase }}</h2>
-
-<p>Hi my name is Andy</p>
-
-<p box bd-color="brown" bg-color="lightblue">Hi my name is Andy</p>
-
-<p box bd-color="brown" >Hi my name is Andy</p>
-
-<p box bg-color="lightblue">Hi my name is Andy</p>
-
-<app-user-profile-with-dependency></app-user-profile-with-dependency>
+<router-outlet></router-outlet>
 
 
 

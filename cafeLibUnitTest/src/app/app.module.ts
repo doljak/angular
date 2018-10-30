@@ -8,8 +8,11 @@ import { BoxDirective } from './box/box.directive';
 import { Routes, RouterModule } from '@angular/router';
 import { AlternatingCasePipe } from './alternate-casing/alternating-case.pipe';
 import { UserProfileWithDependencyComponent } from './user/profile/user-profile-with-dependency/user-profile-with-dependency.component';
-import { UserProfileWithDepencyComponentComponent } from './user/profile/user-profile-with-depency-component/user-profile-with-depency-component.component'
-
+import { UserProfileWithDepencyComponentComponent } from './user/profile/user-profile-with-depency-component/user-profile-with-depency-component.component';
+import { HomeComponent } from './home/home.component';
+import { TestPipeComponent } from './test-pipe/test-pipe.component'
+import { DirectiveComponent } from './directive/directive.component';
+import { exRoutes } from './app.routes'
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
@@ -33,13 +36,17 @@ export class FeatureRoutingModule {}
     AppComponent,
     UserProfileComponent,
     BoxDirective,
+    DirectiveComponent,
     AlternatingCasePipe,
     UserProfileWithDependencyComponent,
-    UserProfileWithDepencyComponentComponent
+    UserProfileWithDepencyComponentComponent,
+    HomeComponent,
+    TestPipeComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    RouterModule.forRoot(exRoutes)
   ],
   exports: [RouterModule],
   providers: [],
