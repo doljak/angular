@@ -6,17 +6,17 @@ import { reject } from 'q';
   providedIn: 'root'
 })
 export class UserService {
+  
+    public user = {
+      first:"Smith",
+      last:"Murphy",
+      roles:["admin","editor"],
+      friends:[
+        "alice", "bert", "candice", "devon", "earl", "francine"
+      ]
+    }
 
   constructor() { }
-
-  public user = {
-    first:"Smith",
-    last:"Murphy",
-    roles:["admin","editor"],
-    friends:[
-      "alice", "bert", "candice", "devon", "earl", "francine"
-    ]
-  }
 
 
   getUsername():string{
