@@ -12,7 +12,10 @@ export class UserService {
   public user = {
     first:"Smith",
     last:"Murphy",
-    roles:["admin","editor"]
+    roles:["admin","editor"],
+    friends:[
+      "alice", "bert", "candice", "devon", "earl", "francine"
+    ]
   }
 
 
@@ -38,8 +41,8 @@ export class UserService {
     })
   }
 
-  getUserDetails():string{
-    return
+  getUserDetails():any{
+    return this.user
   }
 
   getUserDetails_p():Promise<any>{
