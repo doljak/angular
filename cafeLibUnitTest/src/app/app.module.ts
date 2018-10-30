@@ -7,8 +7,8 @@ import { BoxDirective } from './box/box.directive';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AlternatingCasePipe } from './alternate-casing/alternating-case.pipe';
-import { UserProfileWithDependencyComponent } from './user/profile/user-profile-with-dependency/user-profile-with-dependency.component';
-import { UserProfileWithDepencyComponentComponent } from './user/profile/user-profile-with-depency-component/user-profile-with-depency-component.component';
+import { UserProfileWithDependencyMock } from './user/profile/user-profile-with-dependency/user-profile-with-dependency.component';
+import { UserProfileWithDepencySpie } from './user/profile/user-profile-with-depency-component/user-profile-with-depency-component.spie';
 import { HomeComponent } from './home/home.component';
 import { TestPipeComponent } from './test-pipe/test-pipe.component'
 import { DirectiveComponent } from './directive/directive.component';
@@ -38,8 +38,8 @@ export class FeatureRoutingModule {}
     BoxDirective,
     DirectiveComponent,
     AlternatingCasePipe,
-    UserProfileWithDependencyComponent,
-    UserProfileWithDepencyComponentComponent,
+    UserProfileWithDependencyMock,
+    UserProfileWithDepencySpie,
     HomeComponent,
     TestPipeComponent
   ],

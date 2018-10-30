@@ -7,13 +7,13 @@ import { startWith, catchError } from 'rxjs/operators'
 
 @Component({
   selector: 'app-user-profile-with-depency-component',
-  templateUrl: './user-profile-with-depency-component.component.html',
-  styleUrls: ['./user-profile-with-depency-component.component.css']
+  templateUrl: './user-profile-with-depency-component.spie.html',
+  styleUrls: ['./user-profile-with-depency-component.spie.css']
 })
-export class UserProfileWithDepencyComponentComponent implements OnInit {
+export class UserProfileWithDepencySpie implements OnInit {
 
   user:any
-  friendsOnline:Observable<UserProfileWithDepencyComponentComponent>
+  friendsOnline:Observable<UserProfileWithDepencySpie>
   errMsg:string
 
   constructor(private userService:UserService) { }

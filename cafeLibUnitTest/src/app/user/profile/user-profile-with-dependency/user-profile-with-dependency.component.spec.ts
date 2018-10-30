@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserProfileWithDependencyComponent } from './user-profile-with-dependency.component';
+import { UserProfileWithDependencyMock } from './user-profile-with-dependency.component';
 import { UserService } from '../../user.service';
 import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-describe('UserProfileWithDependencyComponent', () => {
+describe('UserProfileWithDependencyMock', () => {
 
 
   const user = {
@@ -20,12 +20,12 @@ describe('UserProfileWithDependencyComponent', () => {
     }
   };
 
-  let component: UserProfileWithDependencyComponent;
-  let fixture: ComponentFixture<UserProfileWithDependencyComponent>;
+  let component: UserProfileWithDependencyMock;
+  let fixture: ComponentFixture<UserProfileWithDependencyMock>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserProfileWithDependencyComponent ],
+      declarations: [ UserProfileWithDependencyMock ],
       providers:[{
         provide: UserService, useValue: MockService
       }],
@@ -35,7 +35,7 @@ describe('UserProfileWithDependencyComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserProfileWithDependencyComponent);
+    fixture = TestBed.createComponent(UserProfileWithDependencyMock);
     component = fixture.componentInstance;
   });
 

@@ -7,7 +7,7 @@ import { UserService } from '../../user.service';
   templateUrl: './user-profile-with-dependency.component.html',
   styleUrls: ['./user-profile-with-dependency.component.css']
 })
-export class UserProfileWithDependencyComponent implements OnInit {
+export class UserProfileWithDependencyMock implements OnInit {
 
   public user:any;
   public friendsOnLine:Observable<string[]>;
