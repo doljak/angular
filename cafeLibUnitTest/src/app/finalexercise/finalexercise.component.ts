@@ -11,6 +11,12 @@ export class FinalexerciseComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.myMethod("world")
+  }
+
+  myMethod(newValue):void
+  {
+    this.test = newValue
   }
 
 }

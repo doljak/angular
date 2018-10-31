@@ -55,18 +55,18 @@ describe('UserProfileWithDepencySpie', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show 2 friends online when initializing',()=>{
+  // it('should show 2 friends online when initializing',()=>{
 
-    fixture.detectChanges()
+  //   fixture.detectChanges()
 
-    debugElements = fixture.debugElement.queryAll( By.css('.online') )
+  //   debugElements = fixture.debugElement.queryAll( By.css('.online') )
 
-    expect(debugElements.length).toBe(2)
+  //   expect(debugElements.length).toBe(2)
 
-    expect(debugElements[0].nativeElement.innerText).toContain('alice')
-    expect(debugElements[1].nativeElement.innerText).toContain('bert')
+  //   expect(debugElements[0].nativeElement.innerText).toContain('alice')
+  //   expect(debugElements[1].nativeElement.innerText).toContain('bert')
 
-    expect(spy_getOnlineFriends.calls.any()).toBe(true, 'getOnlineFriends_o was called')
-    expect(spy_getUserDetails.calls.any()).toBe(true, 'getUserDetails was called')
-  })
+  //   expect(spy_getOnlineFriends.calls.any()).toBe(true, 'getOnlineFriends_o was called')
+  //   expect(spy_getUserDetails.calls.any()).toBe(true, 'getUserDetails was called')
+  // })
 });
