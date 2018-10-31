@@ -12,7 +12,8 @@ import { UserProfileWithDepencySpie } from './user/profile/user-profile-with-dep
 import { HomeComponent } from './home/home.component';
 import { TestPipeComponent } from './test-pipe/test-pipe.component'
 import { DirectiveComponent } from './directive/directive.component';
-import { exRoutes } from './app.routes'
+import { exRoutes } from './app.routes';
+import { FinalexerciseComponent } from './finalexercise/finalexercise.component'
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
@@ -41,7 +42,8 @@ export class FeatureRoutingModule {}
     UserProfileWithDependencyMock,
     UserProfileWithDepencySpie,
     HomeComponent,
-    TestPipeComponent
+    TestPipeComponent,
+    FinalexerciseComponent
   ],
   imports: [
     BrowserModule,
