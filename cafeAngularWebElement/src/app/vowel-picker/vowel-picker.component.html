@@ -1,0 +1,5 @@
+<h1>Pick a vowel</h1>
+
+<div *ngFor="let letter of letters" class="vowelPickerCard" (click)="selected(letter)" >
+  <p [ngStyle]="{'color':letterColor}" > {{ letter }}</p>
+</div>
