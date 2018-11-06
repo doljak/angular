@@ -14,7 +14,7 @@ import { VowelPickerComponent } from './vowel-picker/vowel-picker.component';
     BrowserModule
   ],
   providers: [],
-  //bootstrap: [AppComponent]
+  //bootstrap: [AppComponent],
   entryComponents:[VowelPickerComponent]
 })
 export class AppModule { 
@@ -25,4 +25,5 @@ export class AppModule {
 
     customElements.define("app-vowel-picker", vowelPicker)
   }
+ ngDoBootstrap(){}
 }

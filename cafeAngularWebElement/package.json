@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-el":"ng build --prod --output-hashing=none",
+    "package-el":"cat dist/cafeAngularWebElement/runtime.js dist/cafeAngularWebElement/polyfills.js dist/cafeAngularWebElement/scripts.js dist/cafeAngularWebElement/main.js | gzip > vowelpicker.js.gz",
+    "build-and-package":"npm run build-el && npm run package-el"
   },
   "private": true,
   "dependencies": {
