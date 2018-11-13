@@ -3,43 +3,43 @@
         {
             "id": 1,
             "day":"Monday",
-            "sales": 142,
+            "sales": 142000,
             "bestSeller": "lemonade"
         },
         {
             "id": 2,    
             "day":"Tuesday",
-            "sales": 156,
+            "sales": 156000,
             "bestSeller": "lemonade"
         },
         {
             "id": 3,
             "day":"Wednesday",
-            "sales": 37,
+            "sales": 37000,
             "bestSeller": "iced tea"
         },
         {
             "id": 4,
             "day":"Thrusday",
-            "sales": 243,
+            "sales": 243000,
             "bestSeller": "iced tea"
         },
         {
             "id": 5,
             "day":"Friday",
-            "sales": 259,
+            "sales": 259000,
             "bestSeller": "lemonade"
         },
         {
             "id": 6,
             "day":"Saturday",
-            "sales": 278,
+            "sales": 278000,
             "bestSeller": "pink lemonade"
         },
         {
             "id": 7,
             "day":"Sunday",
-            "sales": 270,
+            "sales": 270000,
             "bestSeller": "lemonade"
         }
     ]
