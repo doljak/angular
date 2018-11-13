@@ -1,0 +1,46 @@
+{
+    "sales":[
+        {
+            "id": 1,
+            "day":"Monday",
+            "sales": 142,
+            "bestSeller": "lemonade"
+        },
+        {
+            "id": 2,    
+            "day":"Tuesday",
+            "sales": 156,
+            "bestSeller": "lemonade"
+        },
+        {
+            "id": 3,
+            "day":"Wednesday",
+            "sales": 37,
+            "bestSeller": "iced tea"
+        },
+        {
+            "id": 4,
+            "day":"Thrusday",
+            "sales": 243,
+            "bestSeller": "iced tea"
+        },
+        {
+            "id": 5,
+            "day":"Friday",
+            "sales": 259,
+            "bestSeller": "lemonade"
+        },
+        {
+            "id": 6,
+            "day":"Saturday",
+            "sales": 278,
+            "bestSeller": "pink lemonade"
+        },
+        {
+            "id": 7,
+            "day":"Sunday",
+            "sales": 270,
+            "bestSeller": "lemonade"
+        }
+    ]
+}
