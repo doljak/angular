@@ -1,8 +1,8 @@
 <div>
   <p>
-    Student name: {{ name }} <br/>
-    <span *ngIf="isJedi">
-      Temple: coruscant
+    Student name: {{ student.name }} <br/>
+    <span *ngIf="student.isJedi">
+      Temple: {{ student.temple === undefined ? "Não colocado info" : student.temple }}
     </span>
   </p>
 </div>
