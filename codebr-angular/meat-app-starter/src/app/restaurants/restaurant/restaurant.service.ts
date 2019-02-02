@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 import { urlLocal } from '../../app.const';
 import { Restaurant } from './restaurant.model';
 import { Observable } from 'rxjs/Observable';
-//import { ErrorHandler } from '../../app.error-handler'
+import { ErrorHandler } from '../../app.error-handler'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
@@ -24,7 +24,7 @@ export class RestaurantService {
   get(type):Observable<Restaurant[]>{
     return this.http.get(`${ urlLocal }${ this.request[type] }`) 
       .map( resp => resp.json())
-      //.catch(ErrorHandler.handleError)
+      .catch(ErrorHandler.handleError)
   }
 
 
