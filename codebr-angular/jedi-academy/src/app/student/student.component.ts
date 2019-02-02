@@ -3,8 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Student } from './student.model'
 @Component({
   selector: 'student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.css']
+  templateUrl: './student.component.html'
 })
 export class StudentComponent implements OnInit {
 
