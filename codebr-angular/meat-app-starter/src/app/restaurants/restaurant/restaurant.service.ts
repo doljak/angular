@@ -21,9 +21,10 @@ export class RestaurantService {
 
   constructor(private http:Http) { }
 
-  get(type, id = ""):Observable<Restaurant[] | any>{
-    id = ( id!=="" ) ? `/${id}` : id;
-    return this.http.get(`${ urlLocal }${ this.request[type] }${id}`) 
+  get(type, id = "",extraId=""):Observable<Restaurant[] | any>{
+    id = ( id!=="" ) ? `/${ id }` : id;
+    extraId = ( extraId!=="") ? `/${ extraId }` : extraId; 
+    return this.http.get(`${ urlLocal }/restaurants${id}${extraId}`) 
       .map( resp => resp.json())
       .catch(ErrorHandler.handleError)
   }
