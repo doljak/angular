@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { RestaurantService } from 'app/restaurants/restaurant/restaurant.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mt-menu-item',
@@ -6,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuTemComponent implements OnInit {
 
-  constructor() { }
+  items:any
+
+  constructor(
+    private activeRoute:ActivatedRoute,
+    private restaurantService:RestaurantService
+  ) { }
 
   ngOnInit() {
+    this.restaurantService.get('restaurants', this.activeRoute.parent.snapshot.params['id'], 'menu')
+      .subscribe(items => this.items = items)
   }
 
 }
