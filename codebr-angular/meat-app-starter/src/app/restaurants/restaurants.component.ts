@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { RestaurantService } from './restaurant/restaurant.service';
 import { Restaurant } from './restaurant/restaurant.model';
 
@@ -10,10 +12,13 @@ import { Restaurant } from './restaurant/restaurant.model';
 export class RestaurantsComponent implements OnInit {
 
   restaurants:Restaurant[] 
-  constructor(private restaurantService:RestaurantService) { }
+  constructor(
+      private activeRoute:ActivatedRoute,
+      private restaurantService:RestaurantService
+      ) { }
 
   ngOnInit() {
-    this.restaurantService.get('restaurants')
+    this.restaurantService.get('restaurants', this.activeRoute.snapshot.params['id'])
       .subscribe( restaurant => this.restaurants = restaurant)
   }
 

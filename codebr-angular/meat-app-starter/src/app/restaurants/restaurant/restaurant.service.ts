@@ -21,8 +21,9 @@ export class RestaurantService {
 
   constructor(private http:Http) { }
 
-  get(type):Observable<Restaurant[]>{
-    return this.http.get(`${ urlLocal }${ this.request[type] }`) 
+  get(type, id = ""):Observable<Restaurant[] | any>{
+    id = ( id!=="" ) ? `/${id}` : id;
+    return this.http.get(`${ urlLocal }${ this.request[type] }${id}`) 
       .map( resp => resp.json())
       .catch(ErrorHandler.handleError)
   }
