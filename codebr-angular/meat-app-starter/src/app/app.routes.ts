@@ -27,7 +27,7 @@ export const ROUTES: Routes = [
     children:[
       {
         path:'',
-        component:MenuComponent,
+        redirectTo:'menu',
         pathMatch:'full'
       },
       {
