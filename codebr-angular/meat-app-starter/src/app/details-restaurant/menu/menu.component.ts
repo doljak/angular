@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestaurantService } from 'app/restaurants/restaurant/restaurant.service';
 import { Observable } from 'rxjs/Observable';
+import { MenuItem } from '../menu-item/menu-item.model';
 
 @Component({
   selector: 'mt-menu',
@@ -9,7 +10,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MenuComponent implements OnInit {
 
-  items:Observable<any>;
+  items:Observable<MenuItem[]>;
+
   
   constructor(
     private activeRoute:ActivatedRoute,
@@ -17,8 +19,11 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.restaurantService.get(this.activeRoute.snapshot.params['id'], 'menu')
-      .subscribe(items => this.items = items)
+    this.items = this.restaurantService.get(this.activeRoute.parent.snapshot.params['id'], 'menu')
+  }
+
+  addEventEmit(item:MenuItem){
+    console.log(item)
   }
 
 }

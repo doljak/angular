@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Restaurant } from 'app/restaurants/restaurant/restaurant.model';
+
 import { RestaurantService } from 'app/restaurants/restaurant/restaurant.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,7 +18,7 @@ export class ReviewsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.reviews = this.restaurantService.get('restaurant', this.activeRoute.parent.snapshot.params['id'], 'reviews')
+    this.reviews = this.restaurantService.get(this.activeRoute.parent.snapshot.params['id'], 'reviews')
   }
 
 }
