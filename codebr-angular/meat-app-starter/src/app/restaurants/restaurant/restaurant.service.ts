@@ -21,7 +21,7 @@ export class RestaurantService {
 
   constructor(private http:Http) { }
 
-  get(type, id = "",extraId=""):Observable<Restaurant[] | any>{
+  get(id = "",extraId=""):Observable<Restaurant[] | any>{
     id = ( id!=="" ) ? `/${ id }` : id;
     extraId = ( extraId!=="") ? `/${ extraId }` : extraId; 
     return this.http.get(`${ urlLocal }/restaurants${id}${extraId}`) 
