@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private _apiService:ApiService,
     private toastr:ToastrService,
-    private router:RouterModule
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -26,7 +26,8 @@ export class SignupComponent implements OnInit {
     this._apiService.signup(this.model).subscribe(
       data => {
         console.log(`data: ${data}`);
-        this.toastr.success(data['message'], 'Success')
+        this.toastr.success(data['message'], 'Success');
+        this.router.navigate(['/login']);
       },
       error => {
         this.toastr.error(error.error.message, 'Error');
