@@ -16,7 +16,7 @@ export class ApiService {
     return this.httpClient.post(`${ API_URL }/user/login`, model);
   }
 
-  signupComponent(model:any){
+  signup(model:any){
     return this.httpClient.post(`${ API_URL }/user/signup`, model);
   }
 
