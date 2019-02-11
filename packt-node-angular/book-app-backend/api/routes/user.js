@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.router();
+const router = express.Router();
 const mongoose = require('mongoose');
 const User = require('../../models/user');
 const bcrypt = require('bcrypt');
@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 router.post('/signup', (req, res, next)=>{
-  console.log(email)
   const email = req.body.email
   User.find({email: email})
     .exec()
@@ -32,12 +31,12 @@ router.post('/signup', (req, res, next)=>{
             })
             user.save()
             .then(result => {
-              return result.status(201).json({
+              return res.status(201).json({
                 msg:'User created successfully'
               });
             })
             .catch(err=>{
-              return result.status(500).json({
+              return res.status(500).json({
                 msg: 'Failed to create user',
                 error:err,
               })
@@ -73,14 +72,14 @@ router.post('/admin-signup', (req, res, next)=>{
               user_type:'admin',
             })
             user.save()
-            .then(res => {
-              return res.status(201).json({
+            .then(result => {
+              res.status(201).json({
                 msg:'User created successfully'
               })
             })
             .catch(err => {
               console.log(err);
-              return res.status(500).json({
+              res.status(500).json({
                 msg: 'Admin creation failed!',
                 error:err,
               })
@@ -92,7 +91,7 @@ router.post('/admin-signup', (req, res, next)=>{
     });
 });
 
-router.post('/admin/login', (req,res, next) =>{
+router.post('/login', (req,res, next) =>{
   console.log(req.body.email);
   console.log(req.body.password);
   const email = req.body.email
@@ -105,7 +104,7 @@ router.post('/admin/login', (req,res, next) =>{
         });
       };
       const userFound = user[0]
-      bcrypt.compare(req.body.password, userFound, (err, result)=>{
+      bcrypt.compare(req.body.password, userFound.password, (err, result)=>{
         if(err){
           return res.status(500).json({
             msg:'Auth failed'

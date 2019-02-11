@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.router()
+const router = express.Router()
 const mongoose = require('mongoose');
 const checkAut = require('../middleware/check-auth');
-const Book = require('../../models/book')
+const Book = require('../../models/books')
 
 router.get('/all-books', checkAut, (req, res, next)=>{
   Book.find()
@@ -55,25 +55,25 @@ router.post('/add-book', checkAut, (req, res, next)=>{
     isbn:req.body.isbn,
     title:req.body.title,
     author:req.body.author,
-    price:req.title.price,
+    price:req.body.price,
   });
   book
   .save()
   .then(result => {
     console.log(result);
-    result.status(201).json({
+    res.status(201).json({
       msg: 'Livro adicionado com sucesso',
     });
   })
   .catch(err => {
     console.log(err)
-    result.status(500).json({
+    res.status(500).json({
       error:err,
     })
   })
 });
 
-router.patch('/update-book/:bookId', checkout, (req, res, next)=>{
+router.patch('/update-book/:bookId', checkAut, (req, res, next)=>{
   const _id = req.params.bookId
   Book.update({_id:_id}, {$set:req.body})
     .exec()

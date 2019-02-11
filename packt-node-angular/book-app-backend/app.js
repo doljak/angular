@@ -9,7 +9,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    'mongodb://localhost:27018/db_bookApp'
+    'mongodb://localhost:27018/db_bookApp', { useNewUrlParser: true }
 );
 
 app.use(morgan('dev'));
