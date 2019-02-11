@@ -8,9 +8,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
-mongoose.connect(
-    'mongodb://localhost:27018/db_bookApp', { useNewUrlParser: true }
-);
+mongoose.connect('mongodb+srv://jeff:jeff2143@my-first-cluster-svtck.mongodb.net/test?retryWrites=truemongodb://localhost:27018/db_bookApp', { useNewUrlParser: true });
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
