@@ -10,6 +10,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 </head>
 <body>
-
+  <div class="login-form">
+    <form (ngSubmit)="f.form.valid && addNew()" #f="ngForm" action="" method="post">
+      <h2 class="text-center">Add New Book</h2>
+      <div class="form-group">
+        <input [(ngModel)]="model.title" #title="ngModel" name="title" type="title" class="form-control" placeholder="Title" required="required">
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="model.author" #author="ngModel" name="author" type="author" class="form-control" placeholder="Author" required="required">
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="model.isbn" #isbn="ngModel" name="isbn" type="isbn" class="form-control" placeholder="ISBN" required="required">
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="model.price" #price="ngModel" name="price" type="price" class="form-control" placeholder="price" required="required">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Add</button>
+      </div>
+    </form>
+    <p class="text-center"><a href="javascript:;" [routerLink]="['/books']" >Cancel</a></p>
+  </div>
 </body>
 </html>

@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpResponse, HttpRequest, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-
-@Injectable({
-  providedIn: 'root'
-})
+//import { Observable } from 'rxjs/Observable';
 
 const API_URL = 'http://127.0.0.1:3001/'
+
+@Injectable()
 export class ApiService {
 
   constructor(private httpClient:HttpClient) {}
@@ -29,10 +27,14 @@ export class ApiService {
   }
 
   deleteBook(id:string){
-    return this.httpClient.delete(`${ API_URL }/books/delete-book/${id}`)
+    return this.httpClient.delete(`${ API_URL }/books/delete-book/${id}`);
   }
 
   bookDetail(id:string){
-    return this.httpClient.get(`${ API_URL }/books/book-details/${id}`)
+    return this.httpClient.get(`${ API_URL }/books/book-details/${id}`);
+  }
+
+  getBooks(){
+    return this.httpClient.get(`${ API_URL }/books/all-books`);
   }
 }
