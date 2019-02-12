@@ -7,7 +7,7 @@ import { BooksComponent } from './templates/books/books.component';
 import { AddBooksComponent } from './templates/add-books/add-books.component';
 import { EditBooksComponent } from './templates/edit-books/edit-books.component';
 
-const routes:Routes = [
+const routes: Routes = [
   { path:'', component:LoginComponent },
   { path:'login', component:LoginComponent },
   { path:'signup', component: SignupComponent },
@@ -17,9 +17,9 @@ const routes:Routes = [
   { path:'edit-books/:id', component:EditBooksComponent },
 ]
 
-NgModule({
-  imports:[RouterModule.forRoot(routes)],
-  exports:[RouterModule]
-})
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
 
-export class AppRoutingModule{ }
+export class AppRoutingModule { }
