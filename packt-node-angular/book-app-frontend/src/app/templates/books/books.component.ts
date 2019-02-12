@@ -32,7 +32,7 @@ export class BooksComponent implements OnInit {
     }
     this._apiService.getBooks().subscribe(
       data => {
-        this.books = data['books']
+        this.books = data;
       },error => {
         this.toastr.error(error.error.msg, "Error");
         this.router.navigate(['/login']);

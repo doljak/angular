@@ -22,15 +22,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  signup(){
+  signin(){
     this._apiService.login(this.model).subscribe(
       data => {
-        if(data['msg'] === "Auth user success"){}
+        if(data['code'] === 200){
+          console.log('login ready to go');
           this.toastr.success(data['message'], 'Success');
           localStorage.setItem('user_type', data['user_type'])
           localStorage.setItem('token', data['token'])
           this.router.navigate(['/books']);
-        },
+        }
+      },
       error => {
         this.toastr.error(error.error.message, 'Error');
       }

@@ -28,15 +28,18 @@ router.get('/all-books', checkAut, (req, res, next)=>{
 });
 
 router.get('/book-details/:bookId', checkAut, (req, res, next)=>{
+  const _id = req.params.bookId
+  console.log("i'm here")
   Book.find({_id:_id})
     .then(docs=>{
+      console.log(docs)
       const response = docs.map(doc=>{
         return {
-          _id:res._id,
-          isbn: res.isbn,
-          title: res.title,
-          author: res.title,
-          price: res.title,
+          _id:doc._id,
+          isbn: doc.isbn,
+          title: doc.title,
+          author: doc.author,
+          price: doc.price,
         }
       });
       res.status(200).json(response);
@@ -74,35 +77,36 @@ router.post('/add-book', checkAut, (req, res, next)=>{
 });
 
 router.patch('/update-book/:bookId', checkAut, (req, res, next)=>{
-  const _id = req.params.bookId
-  Book.update({_id:_id}, {$set:req.body})
+  const id = req.params.bookId;
+    const updateOps = {}
+    console.log(req.body);
+
+    Book.update({_id:id}, {$set:req.body})
     .exec()
     .then(result => {
-      result.status(200).json({
-        msg:'Book updated'
-      });
+        res.status(200).json({
+            message: 'Book updated'
+        });
     })
-    .catch(err=>{
-      console.log(err)
-      result.status(500).json({
-        error:err,
-      });
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error:err
+        });
     });
 });
 
-router.delete('/delete-book/bookId', checkAut, (req, res, next)=>{
+router.delete('/delete-book/:bookId', checkAut, (req, res, next)=>{
   const _id = req.params.bookId
   Book.remove({_id:_id})
     .exec()
     .then(result=>{
-      console.log(result)
-      result.status(200).json({
+      res.status(200).json({
         msg:'Livro removido com sucesso'
       });
     })
     .catch(err=>{
-      console.log(err)
-      result.status(500).json({
+      res.status(500).json({
         error:err,
       });
     });

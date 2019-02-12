@@ -11,22 +11,22 @@
 </head>
 <body>
   <div class="login-form">
-    <form (ngSubmit)="f.form.valid && signup()" #f="ngForm" action="" method="post"> 
+     <form (ngSubmit)="f.form.valid && signup()" #f="ngForm" action="" method="post">
       <h2 class="text-center">Sign Up</h2>
-      <div class="form-control">
-        <input [(ngModel)]="model.name" #email="ngModel" name="name" type="name" class="form-control" placeholder="Name" required="required" />
+      <div class="form-group">
+        <input [(ngModel)]="model.name" #name="ngModel" name="name" type="text" class="form-control" placeholder="Name" required="required">
       </div>
-      <div class="form-control">
-        <input [(ngModel)]="model.email" #name="ngModel" name="email" type="email" class="form-control" placeholder="E-mail" required="required" />
+      <div class="form-group">
+        <input [(ngModel)]="model.email" #email="ngModel" name="email" type="email" class="form-control" placeholder="Email" required="required">
       </div>
-      <div class="form-control">
-        <input [(ngModel)]="model.email" #password="ngModel" name="password" type="password" class="form-control" placeholder="password" required="required" />
+      <div class="form-group">
+        <input [(ngModel)]="model.password" #password="ngModel" name="password" type="password" class="form-control" placeholder="Password" required="required">
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Signup</button>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      </div>
     </form>
-    <p class="text-center">
-      <a href="javascript:;" [routerLink]="['/login']" >Login</a>
-    </p>
+    <p class="text-center"><a href="javascript:;" [routerLink]="['/login']">Login</a></p>
   </div>
 </body>
 </html>

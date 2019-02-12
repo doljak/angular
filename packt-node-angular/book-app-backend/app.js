@@ -17,9 +17,7 @@ app.use(bodyParser.json());
 app.use(function(req,res,next){
     console.log('header-interceptor: Start setting headers.')
 	res.header("Access-Control-Allow-Origin" , "*");
-	res.header(
-		"Access-Control-Allow-Headers", "*"
-	);
+	res.header("Access-Control-Allow-Headers", "*");
 	if(req.method === 'OPTIONS'){
         console.log('header-interceptor: ===OPTIONS.')
 		var headers = {};

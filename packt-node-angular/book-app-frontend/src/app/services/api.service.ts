@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpResponse, HttpRequest, HttpClient } from '@angular/common/http';
 //import { Observable } from 'rxjs/Observable';
 
-const API_URL = 'http://127.0.0.1:3001/'
+const API_URL = 'http://127.0.0.1:3001'
 
 @Injectable()
 export class ApiService {
@@ -22,8 +22,8 @@ export class ApiService {
     return this.httpClient.post(`${ API_URL }/books/add-book`, model);
   }
 
-  editBook(id:string, model:any){
-    return this.httpClient.patch(`${ API_URL }/books/update-book/${id}`,model);
+  editBook(id:any, model:any){
+    return this.httpClient.patch(`${ API_URL }/books/update-book/${id}`, model);
   }
 
   deleteBook(id:string){

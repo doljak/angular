@@ -122,8 +122,9 @@ router.post('/login', (req,res, next) =>{
           )
           return res.status(200).json({
             msg:"Auth user success",
+            code: 200,
             user_type:userFound.user_type,
-            token:token,
+            token:`Bearer ${ token }`,
           })
         };
         return res.status(401).json({

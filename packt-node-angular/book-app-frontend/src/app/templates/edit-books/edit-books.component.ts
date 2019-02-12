@@ -27,7 +27,8 @@ export class EditBooksComponent implements OnInit {
     });
     this._apiService.bookDetail(this.id).subscribe(
       data=>{
-        this.model = data['model']['0'];
+        console.log(data)
+        this.model = data['0'];
       },
       error => {
         if(error.status === 401){
@@ -41,6 +42,7 @@ export class EditBooksComponent implements OnInit {
   updateBook(){
     this._apiService.editBook(this.id, this.model).subscribe(
       data => {
+        console.log(data)
         this.toastr.success("Book updated");
         this.router.navigate(['/books'])
       },
