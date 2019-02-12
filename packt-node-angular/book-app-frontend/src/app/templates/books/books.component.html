@@ -32,20 +32,21 @@
       <th colspan="2">Actions</th>
     </thead>
     <tbody>
-      <tr *bgFor="let book of books">
+      <tr *ngFor="let book of books">
         <td>{{book.title}}</td>
         <td>{{book.author}}</td>
         <td>{{book.price}}</td>
         <td>{{book.isbn}}</td>
-        <td *ngIf="user_type === 'admin'">
-          <a href="javascript:;" (click)="deleteBook({{book._id}})">
+        <td *ngIf="user_type == 'admin'"> 
+          <a href="javascript:;" (click)="deleteBook(book._id)">
             <i class="fa-trash-o fa-2x" aria-hidden="true" style="color:rgba(255,0,0,0.411)"></i>
           </a>
         </td>
-          <a [routerLink]="['/edit-book/{{book._id}}']" routerLinkActive="router-link-active"  >
+        <td>
+          <a routerLink="/edit-book/{{book._id}}" routerLinkActive="router-link-active"  >
             <i class="fa-pencil-square-o fa-2x" aria-hidden="true" style="color:rgba(255,0,0,0.411)"></i>\
           </a>
-        <td></td>
+        </td>
       </tr>
     </tbody>
   </table>
