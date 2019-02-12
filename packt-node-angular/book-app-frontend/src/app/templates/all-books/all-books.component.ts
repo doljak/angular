@@ -7,7 +7,7 @@ import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-all-books',
   templateUrl: './all-books.component.html',
-  styleUrls: ['./all-books.component.css']
+  styleUrls: ['./all-books.component.less']
 })
 export class AllBooksComponent implements OnInit {
 

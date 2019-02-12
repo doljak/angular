@@ -7,7 +7,7 @@ import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-add-books',
   templateUrl: './add-books.component.html',
-  styleUrls: ['./add-books.component.css']
+  styleUrls: ['./add-books.component.less']
 })
 export class AddBooksComponent implements OnInit {
 

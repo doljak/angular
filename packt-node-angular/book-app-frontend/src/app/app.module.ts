@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderInterceptor } from './interrceptors/header-interceptor';
 import { ApiService } from './services/api.service';
-import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -28,7 +28,7 @@ import { EditBooksComponent } from './templates/edit-books/edit-books.component'
   ],
   imports: [
     BrowserModule,
-    ToastModule.forRoot(),
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
