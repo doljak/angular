@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="app-weather">
+    <head>
+        <title>AngularJS 1.4.9 SPA</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="_css/bootstrap.min.css" />
+    </head>
+    <body>
+
+        <header>
+			<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#/" translate="label.title"></a>
+                </div>
+
+				<ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/" translate="label.home"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#/forecast" translate="label.forecast"><i class="fa fa-home"></i></a></li>
+				</ul>
+			</div>
+            </nav>
+		</header>
+
+        <div class="container">
+            <div ng-view></div>
+		</div>
+        
+        <script src="_lib/angular.1.4.9.js"></script>
+        <script src="_lib/angular-translate.min.js"></script>
+        <script src="_modules/ng_route.js"></script>
+        <script src="_modules/ng_resource.js"></script>
+        <script src="_modules/ng_locale.js"></script>
+
+        <script src="_app/app.js"></script>
+        <script src="_app/routes.js"></script>
+        <script src="_app/translate.js"></script>
+        <script src="_app/service.js"></script>
+        <script src="_app/controllers.js"></script>
+        <script src="_app/directives.js"></script>
+    </body>
+</html>

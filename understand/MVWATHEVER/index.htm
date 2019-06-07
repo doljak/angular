@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="angularApp">
+    <head>
+        <title>Introduction to AngularJS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="../bootstrp.min.css" />
+        <style>
+            html, body
+            {
+                font-size: 1.1em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+			<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">AngularJS</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+
+        <div class="container">
+
+            <div ng-controller="mainController">
+
+                <label for="name">what's your git hub?</label>
+                <input type="text" name="name" ng-model="handleName" />
+                <hr />
+                <h1>github.com/{{lowerCase()}}</h1>
+                <div class="alert" ng-class='{
+                    "alert-success":handleName.length >= 6 ,
+                    "alert-warning":handleName.length >= 3 && handleName.length < 6,
+                    "alert-danger":handleName.length < 3,
+                }'>
+                    <div ng-if="handleName.length < 3">
+                        Must have more characters
+                    </div>
+                    <div ng-if="handleName.length <= 6">
+                        Almost...!
+                    </div>
+                    <div ng-if="handleName.length >= 7">
+                        Yes!
+                    </div>
+                </div>
+                
+                <div>
+                    <ul>
+                        <li ng-repeat="rule in rules">
+                            {{rule.rulename}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+		</div>
+        <!-- load angular via CDN -->
+        <script src="../angular.1.4.9.js"></script>
+        <script src="../ng_messages.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
